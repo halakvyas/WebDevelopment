@@ -1,0 +1,195 @@
+﻿ul{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+#header{
+    width: 900px;
+  //  border-style: thin;
+    margin: 0px auto;
+   // border: solid;
+    height: 100px;
+}
+
+#logo{
+	float: left;
+	width: 402px;
+	position: relative;
+    top: -19px;
+}
+
+#logo p{
+	font-size: 50px;
+	margin-left: 10px;
+	color: #861BBF;
+	margin-bottom: 0px;
+}
+
+#searchbox{
+	float: right;
+	background-image: linear-gradient(#ECEA75,#BDEA62);
+	width: 300px;
+	height:40px;
+	margin-top: 40px;
+	padding: 10px 10px 0px 15px;
+	margin-right: 10px;
+}
+
+#textbox{
+    height: 15px;
+	background: white url(images/search.png) right center no-repeat;
+}
+
+#submit{
+	background-color: #A751D6;
+	color: white;
+}
+
+#menu{
+	background-image: linear-gradient(#F3F086,#D8D83D);
+    width: 906px;
+    height: 70px;
+    margin: 15px auto;
+    padding: 10px 0;
+}
+
+#menu ul{
+	list-style: none;
+	margin-top: 0px;
+    margin-bottom: 0px;
+	padding-top: 21px;
+}
+
+#menu ul li{
+	float: left;
+	padding: 0 30px;
+    height: 30px;
+    border-right: 1px solid #5d12e7;
+	color: #5d12e7;
+	text-transform: uppercase;
+	line-height: 30px;
+}
+
+#menu a{
+	text-decoration: none;
+}
+
+#menu li .active{
+  color: purple;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#menu li :hover{
+  color: purple;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#introduction{
+	background: linear-gradient(#E4F1B8, #B7E954);
+    width: 888px;
+    margin: 15px auto;
+    margin: 15px auto;
+    padding: 10px 10px;
+}
+
+#introduction h3{
+	color: #316901;
+	font-size: 45px;
+	font-weight: normal;
+	margin-top: 14px;
+}
+
+#introduction p {
+    font-size: 25px;
+    color: #628F19;
+    text-align: justify;
+}
+
+#leftsidebar{
+	float: left;
+	margin-left: 210px;
+	
+}
+
+#leftsidebar ul li{
+	list-style-image: url(images/arrow.png);
+	font-size: 20px;
+    padding: 4px 0 4px 10px;
+}
+
+.sidebar h3{
+	position: relative;
+    left: 35px;
+    font-size: 28px;
+    color: #B314DB;
+}
+
+#leftsidebar li .active{
+  color: purple;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#leftsidebar li :hover{
+  color: purple;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+
+.sidebar{
+	border: 1px solid greenyellow;
+    border-radius: 23px;
+    width: 32%;
+    margin: 15px auto;
+ 
+}
+
+.sidebar ul {
+    padding-top: 8px;
+}
+
+#rightsidebar{
+	float: right;
+	margin-right: 200px;
+    height: 506px;
+	
+}
+
+#rightsidebar ul li{
+	list-style-image: url(images/tick.png);
+	font-size: 22px;
+    padding: 4px 0 4px 10px;
+	line-height: 45px;
+}
+
+#rightsidebar li .active{
+  color: purple;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#rightsidebar li :hover{
+  color: purple;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer{
+	background: linear-gradient(#F2EF86, #D8D73B);
+	position: relative;
+    top: 539px;
+   // margin-left: 208px;
+    width: 870px;
+    height: 70px;
+	margin: 17px auto;
+	//margin-top: 10px;
+	//margin-bottom: 10px;
+	padding: 10px 30px;
+}
