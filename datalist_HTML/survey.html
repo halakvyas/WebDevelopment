@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Survey</title>
+    <link rel = "stylesheet" type = "text/css" href = "experiment.css" />
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript">
+        console.log("window.location.search: " + window.location.search);
+  	   function showDetails(attrib) {
+  		 var city = attrib;
+  	   }
+
+        function submitPage() {
+        var nextPage = window.location.search;
+        document.forms[0].action = document.forms[0].action + nextPage;
+    	  }
+    </script>
+
+  </head>
+  <body>
+    <form action="summary.html" method="post">
+      <table align = "center" frame="box">
+        <tr>
+          <th bgcolor = "lightgrey" colspan="4">Survey</th>
+        </tr>
+        <tr>
+          <td>How did you like the center ?<br>
+          <br><div class="content-div">Comment: </div>&nbsp;&nbsp;
+          <div class="content-div"><textarea name="comment" size="40" style="height: 50px; width: 300px; overflow: auto;"></textarea></div><br>
+          </tr>
+          <tr>
+           <td><br>Select Text Area Location :<br></td>
+          </tr>
+<br>
+         <tr>
+          <td><div class="city-div">
+          City: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          <select size="4" multiple="multiple" onchange="showDetails(this.value)">
+          <datalist class="city-div">
+          <option id="SanJose">San Jose</option>
+          <option id="SanFrancisco">San Francisco</option>
+          <option id="MV">Mountain View</option>
+          <option id="PA">Palo Alto</option>
+          <option id="Fre">Fremont</option>
+          <option id="LG">Los Gatos</option>
+          </datalist>
+          </select>
+          </td>
+          <td colspan="1">
+          <div class="room_number-div">
+          Room Number: &nbsp;&nbsp;&nbsp;&nbsp</div>
+         <select size="4">
+         <option value="337">Room 337</option>
+         <option value="210">Room 210</option>
+         <option value="110">Room 110</option>
+         <option value="410">Room 410</option>
+         <option value="337">Room 337</option>
+         <option value="625">Room 625</option>
+         </select>
+         </td>
+         </tr>
+
+        <tr>
+         <td>
+         <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="submit" name="submit"	value="Submit & Get Score"
+         style="background: transparent; border-radius: 5px; border: 1px solid"
+         onclick="submitPage();">
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="reset"	name="submit" value="Skip & Get Score"
+         style="background: transparent; border-radius: 5px; border: 1px solid">
+          </td>
+        </tr>
+      </table>
+
+    </form>
+
+  </body>
+</html>

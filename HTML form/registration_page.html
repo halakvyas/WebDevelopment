@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+
+<body>
+  <h1 class="h">Registration</h1>
+  <form>
+  <table class="fieldstable">
+    <tr>
+    <td class="title">User ID</td>
+    <td><input id="UID" type="text" class="textfield" required></td>
+    </tr>
+
+    <tr>
+    <td class="title">Password: </td>
+    <td>
+     <table class="innertable">
+     <tr>
+     <td>
+       <input type="password" class="textfield" id="pass" onfocus="tips()" onblur="tipsReverse()" oninput="checkPassword()" required>
+     </td>
+     <td id="paragraph" class="paragraph">
+       <p>Must be between 7-20 character in length and include 4 alpha character, 1 numeric character or 1 special character (!,-,_,.). The password is case sensitive and must not contain any space or cannot be same as User ID. </p>
+     </td>
+
+     <td class="tips" id="tips">
+     <p>Password Strength </p>
+     <div class="inner">
+       <p id="upper">1 Upper Case Letter</p>
+       <p id="lower">1 Lower Case Letter</p>
+       <p id="number">1 Numeric Digit</p>
+       <p id="size">8 or more characters</p>
+       <p id="character">Uses only these English characters: A-z, 0-9, @, -, _, . </p>
+       <p id="diff">Your password cannot be same as your User ID.</p><br>
+       <p><b>Strength: </b></p>
+       <div class="progress">
+         <div class="current" id="current">
+
+         </div>
+       </div>
+     </div>
+    </td>
+    <td class="invalid" id="invalid">Invalid Password</td>
+    </tr>
+     </table>
+   </td>
+</tr>
+
+<tr>
+    <td class="title">Confirm Password: </td>
+    <td><input type="password" class="textfield" id="confirm_password" onblur="validatePassword()" onkeypress="validatePassword()" required></td>
+    <td class="nomatch" id="nomatch">Password Doesn't Match !</td>
+</tr>
+
+  <tr>
+    <td class="title"> Email Address: </td>
+    <td><input type="email" name="Email" id="email" placeholder="name@email.com"></td>
+  </tr>
+  <tr>
+    <td class="title">Valid Email Address: </td>
+    <td><input type="email" name="Email" id="confirm_email" placeholder="name@email.com"></td>
+  </tr>
+
+  <tr>
+    <td class="title">Security Question ?</td>
+    <td>
+    <select id="question1" required>
+      <option value="">---</option>
+      <option value="S25">Sum of 2 + 5 ?</option>
+      <option value="S100200">Sum of 100 + 200 ?</option>
+      <option value="CUS">Capital of USA is ?</option>
+      <option value="CIND">Capital of India is ?</option>
+    </td>
+    </select>
+</tr>
+<tr>
+    <td class="title">Security Answer: </td>
+    <td><input type="text" class="textfield" id="answer1" required></td>
+  </tr>
+  <tr>
+    <td class="title">Security Question ?</td>
+    <td>
+    <select id="question2" required>
+      <option value="">---</option>
+      <option value="S25">Sum of 2 + 5 ?</option>
+      <option value="S100200">Sum of 100 + 200 ?</option>
+      <option value="CUS">Capital of USA is ?</option>
+      <option value="CIND">Capital of India is ?</option>
+    </td>
+    </select>
+</tr>
+<tr>
+    <td class="title">Security Answer: </td>
+    <td><input type="text" class="textfield" id="answer2" required></td>
+  </tr>
+
+    <tr>
+    <td class="title"><label>Mobile Number: </td>
+    <td><input type="tel" class="textfield" id="mobile" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></td>
+  </tr>
+
+    <tr>
+    <td class="title">Address:</td>
+    <td><textarea id="address" name="address" rows="4" cols="50">
+    </textarea></td></tr>
+    <tr><td class="title"></td>
+    <td>Areas you may be interested in, please select one or more: </td></tr>
+    <tr><td class="title"></td>
+    <td><textarea id="title" class="textar" rows="6" cols="50">
+    </textarea></td>
+    </tr>
+    <tr><td class="title"></td>
+    <td><input type="submit" class="butt" value="Register" onclick="final()"></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>English SCO</title>
+      <link rel="stylesheet" href="experiment.css">
+    <script type="text/javascript" src="common.js"></script>
+<script>
+console.log("window.location.search: " + window.location.search);
+	function display1(attrib) {
+		var selected = attrib.getAttribute("data-value");
+		document.getElementById("p1").innerHTML = selected;
+		if(selected == '650')
+			{
+				document.cookie = "3";
+			}
+	}
+	function display2(attrib) {
+		document.getElementById("p2").innerHTML = attrib.getAttribute("data-value");
+	}
+	function submitPage() {
+      var rA = getQS('rA');
+      var rC = getQS('rC');
+      var answer1 = document.querySelector('input[name="select"]:checked');
+      var answer2 = document.querySelector('input[name="select_2"]:checked');
+      if(answer1 || answer2) {
+      	rA += 1;
+      	var selected = answer1 ? document.querySelector('input[name="select"]:checked').getAttribute("data-value") : false;
+      	var selected2 = answer2 ? document.querySelector('input[name="select_2"]:checked').getAttribute("data-value") : false;
+
+        if ((selected && selected == '650') && (selected2 && selected2 =='Google')) {
+            rC += 1;
+        }
+      }
+      var nextPage = window.location.search;
+      nextPage = setQS(nextPage, 'rA', rA);
+      nextPage = setQS(nextPage, 'rC', rC);
+      document.forms[0].action = document.forms[0].action + nextPage;
+      console.log("Action: " + document.forms[0].action);
+      console.log("window.location.search: " + window.location.search);
+  }
+</script>
+  </head>
+  <body>
+    <form id="myform" action="audio_v.html" method="post">
+      <table frame="box" align="center">
+        <tr>
+          <th  bgcolor="lightgrey"colspan="3" align="center">Question 3</th>
+        </tr>
+        <tr>
+            <td>&nbsp; As per the latest twitter news, complete the article snippet given by <br>&nbsp;selcting appropriate choices for the blanks.<br><br>
+            <input type="radio" name="select" onclick="display1(this)" data-value = "650">&nbsp;&nbsp;Option 1 Mark 1: $650 &nbsp;&nbsp; <input type="radio" name="select_2" onclick="display2(this)" data-value="Twitter">Option 1 Mark 2: Twitter<br><br>
+            <input type="radio" name="select" onclick="display1(this)" data-value = "550">&nbsp;&nbsp;Option 2 Mark 1: $550 &nbsp;&nbsp; <input type="radio" name="select_2" onclick="display2(this)" data-value = "Google">Option 2 Mark 2: Google<br><br>
+            <input type="radio" name="select" onclick="display1(this)" data-value = "650">&nbsp;&nbsp;option 3 Mark 1: $650 &nbsp;&nbsp; <input type="radio" name="select_2" onclick="display2(this)" data-value = "Facebook">Option 3 Mark 2: Facebook<br><br>
+  				  <input type="submit" name="submit"	value="Submit & Next Question"
+  					style="background: transparent; border-radius: 5px; border: 1px solid"
+            onclick="submitPage();">
+  					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  					<input type="reset"	name="reset" value="Cancel & Clear Solution"
+  					style="background: transparent; border-radius: 5px; border: 1px solid">
+  				</td>
+        <td>Twitter wants more cash. The company announced two<br>
+          <mark>
+          <label id="p1">_______</label></mark> million debt offerings in a filing today, each with a <br>potential $100 increase provided that the sales are <br>oversubscribed. Assuming full tip, including the $100 million <br>boosters, <mark><label id="p2">______</label></mark> will rise upto $1.5 billion with the 2 offerings.
+
+         <footer>
+        <p>Source: <a href="https://techcrunch.com/2014/09/10/twitter-to-raise-up-to-1-5b-in-debt-offering/">https://techcrunch.com/2014/09/10/twitter-to-raise-up-to-1-5b-in-debt-offering/</a>.</p>
+        </footer>
+      </td>
+       </tr>
+      </table>
+    </form>
+  </body>
+</html>

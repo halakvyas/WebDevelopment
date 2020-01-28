@@ -1,0 +1,59 @@
+.tab{
+  overflow: hidden;
+  background-color: #0e0e9e;
+  block-size: 50px;
+
+}
+
+.tab button{
+  background-color: inherit;
+    float: left;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 13px;
+}
+
+.tab label{
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 32px;
+  color: white;
+  align-self: center;
+}
+
+.tab button:hover {
+  background-color: blue;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.button{
+  position: relative;
+  left: 200px;
+  top: 70px;
+  background-color: #3ac73a;
+  font-size: 22px;
+  width: 200px
+}
+
+td{
+  padding: 1.05%;
+  width: 250px;
+  font-size: 20px;
+  line-height: 20px;
+  z-index: -1;
+}
+
+td .photo{
+  position: absolute;
+  top: 50px;
+}

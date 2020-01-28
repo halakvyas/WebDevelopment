@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Audio & Video Question</title>
+      <link rel="stylesheet" href="experiment.css">
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript">
+         console.log("window.location.search: " + window.location.search);
+
+        function displayv(atr){
+          var selected = answer.getAttribute("data-value");
+          if(selected == 'NASA'){
+            document.cookie = "1";
+          }
+        }
+        function submitPage() {
+        var vA = getQS('vA');
+        var vC = getQS('vC');
+        var selected = document.querySelector('input[name="select1"]:checked').getAttribute("data-value");
+        if(selected) {
+        	vA += 1;
+          if (selected =='NASA') {
+              vC += 1;
+          }
+        }
+        var nextPage = window.location.search;
+        nextPage = setQS(nextPage, 'vA', vA);
+        nextPage = setQS(nextPage, 'vC', vC);
+        document.forms[0].action = document.forms[0].action + nextPage;
+        console.log("Action: " + document.forms[0].action);
+        console.log("window.location.search: " + window.location.search);
+       }
+       </script>
+       </head>
+       <body>
+         <form id="myform" action="survey.html" method="post">
+         <table frame="box" align="center">
+         <tr>
+           <th bgcolor="lightgrey" colspan="4">Question 4</th>
+         </tr>
+         <tr>
+           <td>Watch the video and answer the following question.<br> What is the source as mentioned in the video?
+           </td>
+           <td rowspan = "4">
+               <iframe width="300" height="250"
+                src="https://www.youtube.com/embed/GTWeA_1zyLw">
+               </iframe>
+               <footer>
+              <p>Source: <a href="https://www.youtube.com">https://www.youtube.com</a>.</p>
+              </footer>
+           </td>
+           </tr>
+           <tr>
+           <td>
+               <input type="radio" name="select1" data-value="NASA" onClick="displayv(this)">&nbsp;&nbsp;NASA.gov<br><br>
+               <input type="radio" name="select1" data-value="DATA" onClick="displayv(this)">&nbsp;&nbsp; Data.gov<br><br>
+               <input type="radio" name="select1" data-value="Facebook" onClick="displayv(this)">&nbsp;&nbsp;Facebook<br><br>
+               <input type="radio" name="select1" data-value="XYZ" onClick="displayv(this)"> &nbsp;&nbsp;XYZ.net <br><br>
+               <input type="submit" name="submit" value="Submit & Next Question"
+               style="background: transparent; border-radius: 5px; border: 1px solid"
+               onClick="submitPage();">
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="reset"	name="reset" value="Cancel & Clear Solution"
+               style="background: transparent; border-radius: 5px; border: 1px solid">
+           </td>
+         </tr>
+       </table>
+     </form>
+       </body>
+     </html>
